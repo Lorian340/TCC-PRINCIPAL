@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Produtos</title>
+
+    <link rel="stylesheet" href="../css/output.css">
+    
+    <script src="https://kit.fontawesome.com/6fcb095cb0.js" crossorigin="anonymous"></script>
+
+    <style>
+        .toast-enter {
+            opacity: 0;
+            transform: translateY(-20px);
+        } 
+        .toast-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 300ms, transform 300ms;
+        }
+        .toast-exit-active {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 300ms, transform 300ms;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Gerenciador de Produtos</h1>
+            <button id="addProductBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 cursor-pointer">
+                + Adicionar Produto
+            </button>
+        </header>
+
+        <main id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <p class="text-gray-500">Carregando produtos...</p>
+        </main>
+    </div>
+
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 justify-center items-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg m-4 max-h-screen overflow-y-auto">
+            
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-2xl font-bold text-gray-800">Adicionar Novo Produto</h2>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-800 text-3xl cursor-pointer">&times;</button>
+            </div>
+            
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium mb-1">Nome</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="price" class="block text-gray-700 font-medium mb-1">Preço (R$)</label>
+                        <input type="number" id="price" name="price" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="category" class="block text-gray-700 font-medium mb-1">Categoria</label>
+                        <input type="text" id="category" name="category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                     <div class="mb-4">
+                        <label for="brand" class="block text-gray-700 font-medium mb-1">Marca</label>
+                        <input type="text" id="brand" name="brand" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="color" class="block text-gray-700 font-medium mb-1">Cor</label>
+                        <input type="text" id="color" name="color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                     <div class="mb-4 md:col-span-2">
+                        <label for="image" class="block text-gray-700 font-medium mb-1 cursor-pointer">Imagem</label>
+                        <input type="file" id="image" name="image" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer">
+                        <img id="imagePreview" src="" alt="Prévia da imagem" class="mt-2 rounded-lg max-h-32 hidden">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="isNew" name="isNew" class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        <span>Novo</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="isHot" name="isHot" class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        <span>Em Alta</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="isLimited" name="isLimited" class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        <span>Limitado</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="isCollection" name="isCollection" class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        <span>Coleção</span>
+                    </label>
+                </div>
+                
+                <div class="flex justify-end space-x-4 mt-8">
+                    <button type="button" id="cancelBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer">Cancelar</button>
+                    <button type="submit" id="submitBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 cursor-pointer">Salvar Produto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container" class="fixed top-5 right-5 z-[100] w-full max-w-xs space-y-2"></div>
+
+
+    <script src="../js/crud.js"></script>
+</body>
+</html>

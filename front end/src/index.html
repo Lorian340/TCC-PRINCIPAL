@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClasseA | Home</title>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="https://kit.fontawesome.com/6fcb095cb0.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-[#f3f3f3]">
+    <header class="sticky top-0 z-50 bg-[#1F2937] flex justify-center py-4 items-center transition-shadow">
+        <div class="w-full max-w-4xl flex justify-between items-center px-4">
+            <div class="flex items-center text-2xl font-bold text-white">
+                <span>Classe <span class="text-red-600">A</span></span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="text-white text-lg font-bold flex gap-8">
+                    <li>
+                        <a href="#produtos" class="bg-transparent text-white font-bold cursor-pointer hover:underline">Produtos</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="bg-transparent text-white font-bold cursor-pointer hover:underline">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="md:hidden flex items-center justify-center hamburger-btn" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars text-white text-2xl"></i>
+            </button>
+        </div>
+    </header>
+    <nav id="mobile-menu" class="fixed inset-0 bg-[#1F2937]/95 z-[100] flex-col items-center justify-center hidden">
+        <button class="absolute top-4 right-6 text-white text-3xl close-mobile-menu" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="text-white text-2xl font-bold flex flex-col items-center gap-8 mt-20">
+            <li>
+                <a href="#produtos" class="bg-transparent text-white font-bold cursor-pointer hover:underline" onclick="document.getElementById('mobile-menu').classList.add('hidden');document.getElementById('mobile-menu').classList.remove('flex');">Produtos</a>
+            </li>
+            <li>
+                <a href="#contato" class="bg-transparent text-white font-bold cursor-pointer hover:underline" onclick="document.getElementById('mobile-menu').classList.add('hidden');document.getElementById('mobile-menu').classList.remove('flex');">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="w-full bg-[#1F2937] py-2 justify-center shadow hidden md:flex">
+        <div class="flex flex-col md:flex-row md:justify-between w-full max-w-4xl text-white gap-2 px-4">
+            <p><i class="fa-solid fa-truck"></i> Frete grátis acima de R$200</p>
+            <p><i class="fa-solid fa-credit-card"></i> Até 10x sem juros</p>
+            <p><i class="fa-solid fa-percent"></i> 5% de desconto no PIX</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="w-full bg-[#f3f3f3] flex flex-col items-center text-center">
+            <div class="py-14">
+                <h2 class="text-6xl py-2 font-bold">Estilo Exclusivo, Preço Acessível!</h2>
+                <p class="py-3 text-xl">Utilize o cupom <span
+                        class="text-white bg-red-600 p-2 rounded-md font-bold">CLASSEA10</span> na sua primeira compra e
+                    ganhe 10% de desconto.</p>
+                <p class="text-xl text-gray-400">Ou 5% de desconto em qualquer compra no Pix.</p>
+            </div>
+        </div>
+
+        <section class="py-16" id="produtos">
+            <div class="container mx-auto px-4">
+                <div class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    <h2>DESTAQUES DA LOJA</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="assets/old/jaqueta-inverno.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                                Jaquetas de Inverno
+                            </h3>
+                            <button
+                                class="bg-white/10 text-white border-white/50 hover:bg-white hover:text-foreground backdrop-blur-sm p-2 border-2 rounded-md hover:text-black cursor-pointer">
+                                Ver Agora
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="assets/old/tenis-exclusivo.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                                Tênis Exclusivos
+                            </h3>
+                            <button
+                                class="bg-white/10 text-white border-white/50 hover:bg-white hover:text-foreground backdrop-blur-sm p-2 border-2 rounded-md hover:text-black cursor-pointer">
+                                Descobrir
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="assets/old/kit-time.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                                Kits de Time
+                            </h3>
+                            <button
+                                class="bg-white/10 text-white border-white/50 hover:bg-white hover:text-foreground backdrop-blur-sm p-2 border-2 rounded-md hover:text-black cursor-pointer">
+                                Explorar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container mx-auto px-4">
+                <div class="text-3xl md:text-4xl font-bold text-center mb-6">
+                    <h2>NOSSA COLEÇÃO</h2>
+                </div>
+
+                <div class="flex">
+                    <div class="w-1/4 flex-col hidden md:block">
+                        <div class="w-full bg-[#f0f0f0] rounded-md p-4 m-2">
+                            <h3 class="text-2xl font-bold">Marcas</h3>
+                            <ul class="pt-4 marcas-list">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Nike</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Corteiz</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Adidas</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Puma</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                            </ul>
+                        </div>
+
+                        <div class="w-full bg-[#f0f0f0] rounded-md p-4 m-2">
+                            <h3 class="text-2xl font-bold">Categorias</h3>
+                            <ul class="pt-4 flex-col categorias-list">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Tênis</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Jaquetas</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Moletons</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Calças</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Acessórios</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                            </ul>
+                        </div>
+
+                        <div class="w-full bg-[#f0f0f0] rounded-md p-4 m-2">
+                            <h3 class="text-2xl font-bold">Extras</h3>
+                            <ul class="pt-4 flex-col extras-list">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Edição Limitada</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Hot</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Novo</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                                <li class="py-2"><button class="w-full text-left cursor-pointer">Coleção Premium</button></li>
+                                <hr class="border-gray-300 cursor-default">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-3/4 px-6 m-2">
+                        <div class="flex items-center justify-between mb-4 md:hidden">
+                            <button id="open-filters-mobile" class="bg-[#1F2937] text-white px-4 py-2 rounded-md flex items-center gap-2">
+                                <i class="fa-solid fa-filter"></i> Filtros
+                            </button>
+                            <div class="flex gap-1 w-[65%]">
+                                <input type="text" placeholder="Buscar produtos..." class="p-2 bg-white border border-gray-300 rounded-md w-full">
+                                <button class="bg-red-600 p-3 rounded-md text-white cursor-pointer flex items-center gap-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex gap-1 mb-4 px-4">
+                            <input type="text" placeholder="Buscar produtos..." class="p-2 bg-white border border-gray-300 rounded-md w-[90%]">
+                            <button class="w-[10%] bg-red-600 p-3 rounded-md text-white cursor-pointer gap-2 flex items-center"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+                        </div>
+
+                        <div id="active-filters" class="flex flex-wrap gap-2 mb-4 px-4"></div>
+
+                        <div class="container mx-auto px-4">
+                            <div id="product-list" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                            <div id="pagination" class="flex justify-center items-center gap-2 mt-8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-16 mt-10 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">CONTATO</h2>
+                <div class="flex flex-col md:flex-row gap-12">
+                    
+                    <div class="md:w-1/2 w-full bg-[#f8f9fa] rounded-lg shadow p-8">
+                        <form>
+                            <div class="mb-5">
+                                <label for="nome" class="block text-gray-700 font-semibold mb-2">Nome</label>
+                                <input type="text" id="nome" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white" />
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" id="email" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white" />
+                            </div>
+                            <div class="mb-5">
+                                <label for="assunto" class="block text-gray-700 font-semibold mb-2">Assunto</label>
+                                <input type="text" id="assunto"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white" />
+                            </div>
+                            <div class="mb-5">
+                                <label for="mensagem" class="block text-gray-700 font-semibold mb-2">Mensagem</label>
+                                <textarea id="mensagem" rows="5" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="bg-[#1F2937] hover:bg-red-600 text-white font-bold py-2 px-6 rounded-md transition">Enviar Mensagem</button>
+                        </form>
+                    </div>
+
+                    <div class="md:w-1/2 w-full flex flex-col">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4">Informações de Contato</h4>
+                            <p class="mb-3 flex items-center text-gray-700"><i class="fas fa-map-marker-alt mr-2 text-red-600"></i> Rua Brasilia, 526 - Laranjeiras do Sul, PR</p>
+                            <p class="mb-3 flex items-center text-gray-700"><i class="fas fa-phone mr-2 text-red-600"></i> (42) 98424-0383</p>
+                            <p class="mb-3 flex items-center text-gray-700"><i class="fas fa-envelope mr-2 text-red-600"></i> contato@classea.com.br</p>
+                            <p class="mb-3 flex items-center text-gray-700"><i class="fas fa-clock mr-2 text-red-600"></i> Segunda a Sexta: 9h às 18h | Sábado: 9h às 13h</p>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold mb-4">Redes Sociais</h4>
+                            <div class="flex space-x-5 mt-3">
+                                <a href="#" class="text-gray-700 hover:text-red-600 transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="#" class="text-gray-700 hover:text-red-600 transition"><i class="fab fa-instagram fa-lg"></i></a>
+                                <a href="#" class="text-gray-700 hover:text-red-600 transition"><i class="fab fa-twitter fa-lg"></i></a>
+                                <a href="#" class="text-gray-700 hover:text-red-600 transition"><i class="fab fa-tiktok fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--footer da descrição -->
+    <footer class="bg-[#212529] text-white pt-10 pb-5 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h5 class="font-bold mb-4 text-lg">Classe A</h5>
+                <p class="text-sm text-gray-300">Sua loja de moda exclusiva com as melhores tendências e preços acessíveis.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-white hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 text-lg">Links Rápidos</h5>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">Home</a></li>
+                    <li><a href="#contato" class="text-gray-300 hover:text-white transition">Contato</a></li>
+                    <li><a href="#produtos" class="text-gray-300 hover:text-white transition">Produtos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 text-lg">Atendimento</h5>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">Política de Privacidade</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">Termos e Condições</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">Política de Trocas</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 text-lg">Newsletter</h5>
+                <p class="text-sm text-gray-300">Receba nossas novidades e promoções exclusivas.</p>
+                <form class="flex mt-4">
+                    <input type="email" class="rounded-l-md px-3 py-2 w-full text-white border-white border focus:outline-none" placeholder="Seu e-mail">
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-r-md font-semibold transition">Inscrever</button>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-8 pt-4 text-center text-sm text-gray-400 footer-bottom">
+            <p>&copy; 2025 Classe A. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/hamburger.js"></script>
+    <script src="js/scrollHeader.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/filterMenu.js"></script>
+</body>
+
+</html>
